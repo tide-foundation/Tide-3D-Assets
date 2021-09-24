@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8894918657801479394
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b94fcd11afffcb142908bfcb1e261fba, type: 3}
+  m_Name: MotionBlur
+  m_EditorClassIdentifier: 
+  active: 0
+  enabled:
+    overrideState: 1
+    value: 1
+  shutterAngle:
+    overrideState: 1
+    value: 219
+  sampleCount:
+    overrideState: 1
+    value: 26
 --- !u!114 &-6153122987976817557
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -12,7 +34,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b924e2dad56384a8df2a1e111bb675, type: 3}
   m_Name: Vignette
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -44,6 +66,32 @@ MonoBehaviour:
   opacity:
     overrideState: 0
     value: 1
+--- !u!114 &-4943847711081018481
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6050e2d5de785ce4d931e4dbdbf2d755, type: 3}
+  m_Name: ChromaticAberration
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  spectralLut:
+    overrideState: 0
+    value: {fileID: 0}
+    defaultState: 1
+  intensity:
+    overrideState: 1
+    value: 0.21
+  fastMode:
+    overrideState: 1
+    value: 0
 --- !u!114 &-3076565523680155181
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -56,19 +104,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
   m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enabled:
     overrideState: 1
     value: 1
   focusDistance:
     overrideState: 1
-    value: 0.68
+    value: 1.79
   aperture:
     overrideState: 1
-    value: 9.7
+    value: 6.5
   focalLength:
     overrideState: 1
-    value: 36
+    value: 39
   kernelSize:
     overrideState: 0
     value: 1
@@ -90,7 +138,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.7
+    value: 1.06
   threshold:
     overrideState: 0
     value: 1
@@ -137,6 +185,8 @@ MonoBehaviour:
   - {fileID: 3204207514899801804}
   - {fileID: -1388607523602051094}
   - {fileID: -3076565523680155181}
+  - {fileID: -4943847711081018481}
+  - {fileID: -8894918657801479394}
 --- !u!114 &2123568773143821190
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -201,8 +251,8 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   saturation:
-    overrideState: 0
-    value: 60.4
+    overrideState: 1
+    value: 58
   brightness:
     overrideState: 0
     value: 0
@@ -240,13 +290,13 @@ MonoBehaviour:
     overrideState: 0
     value: 100
   lift:
-    overrideState: 1
+    overrideState: 0
     value: {x: 0.7423496, y: 0.80676234, z: 1, w: 0}
   gamma:
     overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
   gain:
-    overrideState: 1
+    overrideState: 0
     value: {x: 1, y: 1, z: 1, w: 0}
   masterCurve:
     overrideState: 0
@@ -1469,7 +1519,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 0.85
+    value: 0.66
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -1493,7 +1543,7 @@ MonoBehaviour:
     value: 0
   radius:
     overrideState: 0
-    value: 0.25
+    value: 0.3
   quality:
-    overrideState: 0
-    value: 2
+    overrideState: 1
+    value: 4

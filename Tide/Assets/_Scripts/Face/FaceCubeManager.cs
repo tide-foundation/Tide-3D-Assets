@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.Rendering.PostProcessing;
 
 public class FaceCubeManager : MonoBehaviour {
@@ -25,10 +26,15 @@ public class FaceCubeManager : MonoBehaviour {
     [SerializeField] private float _minBloom = 1, _maxBloom = 3;
     [SerializeField] private PostProcessVolume _volume;
     [SerializeField] private bool _distort;
+
+    [SerializeField] private Light _light;
+    [SerializeField] private float _MaxLight = 12;
     private Bloom _bloom;
     void Start() {
         _volume.profile.TryGetSettings(out _bloom);
         _camTransform.rotation = Quaternion.Euler(_startRot);
+
+        DOVirtual.Float(0, _MaxLight, _maxSpeed, (v) =>_light.intensity = v);
 
         var mySequence = DOTween.Sequence();
 

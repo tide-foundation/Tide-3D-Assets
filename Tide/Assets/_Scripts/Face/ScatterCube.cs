@@ -17,18 +17,29 @@ public class ScatterCube : MonoBehaviour
     [SerializeField] private bool _move;
     [SerializeField] private float  _maxMove = 2;
     [SerializeField] private Ease _ease;
-    void Start()
-    {
+    [SerializeField] private Vector3 _rotation;
+    private List<GameObject> _cubes = new List<GameObject>();
+    void Start() {
+        ScatterCubes();
+    }
+
+   public void ScatterCubes() {
+        foreach (var cube in _cubes) {
+            Destroy(cube);
+        }
+        _cubes = new List<GameObject>();
         for (int i = 0; i < _count; i++)
         {
-            var cube = Instantiate(_prefab, transform.position + Random.insideUnitSphere * _radius, Quaternion.identity, transform);
+            var cube = Instantiate(_prefab, transform.position + Random.insideUnitSphere * _radius, Quaternion.Euler(_rotation), transform);
             var scale = Random.Range(_minScale, _maxScale);
             cube.transform.localScale = new Vector3(scale, scale, scale);
             //var scale = Random.Range(-_scaleModifier, _scaleModifier) + cube.transform.localScale.x;
             //_cubes.Add(cube.transform);
             // cube.transform.localScale = new Vector3(scale, scale, scale);
 
-            if (_move) cube.transform.DOLocalMoveY(cube.transform.localPosition.y + Random.Range(-_maxMove, _maxMove), Random.Range(1f,2f)).SetEase(_ease).SetLoops(-1, LoopType.Yoyo);
+            if (_move) cube.transform.DOLocalMoveY(cube.transform.localPosition.y + Random.Range(-_maxMove, _maxMove), Random.Range(1f, 2f)).SetEase(_ease).SetLoops(-1, LoopType.Yoyo);
+
+            _cubes.Add(cube);
         }
     }
 

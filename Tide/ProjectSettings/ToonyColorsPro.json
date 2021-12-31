@@ -6,7 +6,9 @@
     "CustomOutputPath": "/JMO Assets/Toony Colors Pro/Shaders Generated/",
     "LastImplementationExportImportPath": "X:/Git/Unity/Tide/Assets",
     "OpenedFoldouts": [
-        "LIGHTING"
+        "LIGHTING",
+        "SURFACE",
+        "STYLIZATION"
     ],
     "UseCustomFont": true,
     "CustomFont": {
